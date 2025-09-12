@@ -50,28 +50,26 @@ var sixl_words = [
 func set_gaps(array_size: int) -> void:
 	var x = 120
 	var y_positions = [80, 180, 80, 180]  # Posições Y para cada linha
-	var image_offset = Vector2(-40, -50)  # Ajuste de posição da imagem
 	var words
-	
+
 	if array_size == 4:
 		words = fourl_words
 	elif array_size == 5:
 		words = fivel_words
 	else:
 		words = sixl_words
-	
+
 	# Limpa imagens anteriores
 	for img in word_images:
 		img.queue_free()
 	word_images.clear()
-	
-	# Seleção de palavras
+
 	var selected_indices = []
 	while selected_indices.size() < 4:
 		var idx = randi() % words.size()
 		if not selected_indices.has(idx):
 			selected_indices.append(idx)
-	
+
 	# Criação dos elementos
 	for i in 4:
 		if i == 2:
@@ -82,26 +80,39 @@ func set_gaps(array_size: int) -> void:
 					x += 620
 				_:
 					x += 560
+
 		var word_data = words[selected_indices[i]]
 		var word_str = word_data["word"]
-		
-		# Adiciona imagem da palavra
-		if word_data["image"] != "":
-			var img = TextureRect.new()
-			img.texture = load(word_data["image"])
-			img.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-			img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-			img.custom_minimum_size = Vector2(128, 128)
-			add_child(img)
-			word_images.append(img)
-			img.position = Vector2(x - 125, y_positions[i] + image_offset.y + 20)
-		
-		# Criação das letras
+		var base_x = x
+		var base_y = y_positions[i]
+
+		# Criação das letras primeiro
 		for n in array_size:
 			var draggable = get_node("Arrastável").duplicate()
 			selected_words[i]["letters"].append([draggable, word_str[n]])
 			add_child(draggable)
-			draggable.position = Vector2(x + (n * 75), y_positions[i])
+			draggable.position = Vector2(base_x + (n * 75), base_y)
+
+		# Agora adiciona a imagem da palavra
+		if word_data["image"] != "":
+			var img = TextureRect.new()
+			img.texture = load(word_data["image"])
+			img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			img.expand = true
+
+			# 📏 Tamanho proporcional à tela
+			var altura_tela = get_viewport_rect().size.y
+			var tamanho = clamp(altura_tela * 0.15, 48, 80)
+			img.custom_minimum_size = Vector2(tamanho, tamanho)
+
+			# 🧭 Alinhamento com a primeira letra
+			var margem_horizontal = 20  # distância entre imagem e letras
+			var img_x = base_x - tamanho - margem_horizontal
+			var img_y = base_y + 32 - tamanho / 2  # centralizar com altura ~64px da letra
+
+			img.position = Vector2(img_x, img_y)
+			add_child(img)
+			word_images.append(img)
 
 func verify_gaps() ->bool:
 	var completed = true

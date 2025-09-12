@@ -5,7 +5,7 @@ var lista_temas = ["Padrão", "Azul", "Verde", "Roxo"]
 
 var is_music_on: bool = true : set = set_music_on
 var config = {
-	"vidas": 3,
+	"vidas": -1,
 	"pontuacao": 0,
 	"pontuacao_ativada": true,
 	"temporizador_ativado": true,

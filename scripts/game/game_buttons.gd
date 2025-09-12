@@ -111,7 +111,11 @@ func atualizar_ui_tempo():
 	label_tempo.text = "%02d:%02d" % [minutos, segundos]
 	
 func atualizar_ui_vidas():
-	label_vidas.text = "Vidas: %02d" % Jogo.vidas
+	if Jogo.vidas == -1:
+		label_vidas.text = "Vidas: ∞"
+	else:
+		label_vidas.text = "Vidas: %02d" % Jogo.vidas
+
 	
 func atualizar_ui_pontos():
 	label_pontuacao.text = "%02d" % Jogo.pontuacao

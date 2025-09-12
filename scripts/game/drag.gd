@@ -30,35 +30,53 @@ func is_idle():
 			game_tips()
 			Jogo.aux_time = current_time
 
-func game_tips():
+func game_tips() -> void:
 	is_tipping = true
-	var word_complete
+	
 	for word in slots.selected_words:
 		var letters = word["letters"]
-		word_complete = true 
+		var word_complete := true
+		
 		for current_letter in letters:
 			if not current_letter[0].is_occupied:
-				word_complete = false  
-				break 
-		if not word_complete:  
+				word_complete = false
+				break
+		
+		if not word_complete:
 			for current_letter in letters:
-				if not current_letter[0].is_occupied:  
-					var original_color = current_letter[0].color
-					var end_time = Time.get_ticks_msec() + tip_timeout
-										
-					while Time.get_ticks_msec() < end_time:
-						if !is_tipping:
-							keyboard.tip_letter(current_letter[1], 0)
-							return
-						current_letter[0].color = "green"
-						keyboard.tip_letter(current_letter[1], 1)
-						await get_tree().create_timer(0.5).timeout 
-						current_letter[0].color = original_color
-						keyboard.tip_letter(current_letter[1], 0)
-						await get_tree().create_timer(0.5).timeout 
-						
-					current_letter[0].color = original_color
-					return  
+				if not current_letter[0].is_occupied:
+					await piscar_letra(current_letter)
+					is_tipping = false
+					return
+func piscar_letra(current_letter: Array) -> void:
+	var slot_node = current_letter[0]
+	var letra = current_letter[1]
+	
+	if not is_instance_valid(slot_node) or not is_instance_valid(keyboard):
+		return
+	
+	var original_color = slot_node.color
+	var tempo_total = 3.0  # segundos
+	var intervalo = 0.5
+	var tempo_passado = 0.0
+	
+	while tempo_passado < tempo_total:
+		if not is_tipping:
+			keyboard.tip_letter(letra, 0)
+			return
+		
+		slot_node.color = Color.GREEN
+		keyboard.tip_letter(letra, 1)
+		await get_tree().create_timer(intervalo).timeout
+		
+		slot_node.color = original_color
+		keyboard.tip_letter(letra, 0)
+		await get_tree().create_timer(intervalo).timeout
+		
+		tempo_passado += intervalo * 2
+	
+	slot_node.color = original_color
+	keyboard.tip_letter(letra, 0)
 
 func _ready():
 	Jogo.aux_time = Time.get_ticks_msec()
@@ -121,11 +139,12 @@ func _gui_input(event: InputEvent) -> void:
 						get_tree().change_scene_to_file("res://scenes/prox_fase.tscn")
 				else:
 					Jogo.add_erros()
-					if not(already_missed()):
+					
+					# Só reduz vidas se não for infinito
+					if not already_missed() and Jogo.vidas != -1:
 						Jogo.vidas -= 1
 					
 					var palavra_errada = null
-					# Encontrar a palavra correspondente à lacuna onde a letra foi solta
 					for palavra_atual in slots.selected_words:
 						for letra_posicao in palavra_atual["letters"]:
 							if letra_posicao[0] == current_snap_area:
@@ -133,11 +152,12 @@ func _gui_input(event: InputEvent) -> void:
 								break
 						if palavra_errada:
 							erro.play()
-							break  # Palavra encontrada, pode sair do loop
+							break
 					if palavra_errada:
 						verify_type_error(letter_name, palavra_errada)
 					
-					if Jogo.vidas < 0:
+					# Só faz "game over" se vidas não forem infinitas
+					if Jogo.vidas != -1 and Jogo.vidas < 0:
 						Jogo.completo = "S/ VIDAS"
 						if Jogo.word_size == 4:
 							Jogo.set_inatividade_fase1()
@@ -147,9 +167,9 @@ func _gui_input(event: InputEvent) -> void:
 							Jogo.set_inatividade_fase2()
 							Jogo.word_size = 3
 							Jogo.salvar_dados_no_csv()
-						get_tree().change_scene_to_file("res://scenes/menu.tscn") # provavelmente temporário, talvez seja interessante fazer uma tela de game over
+						get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
 					root_node.atualizar_ui_vidas()
-					
 				position = original_position # move o botão para a posição de origem
 				accept_event()
 				
