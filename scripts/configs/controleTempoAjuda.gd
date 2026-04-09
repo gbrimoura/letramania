@@ -4,7 +4,11 @@ extends Control
 @onready var label = $TempoAjuda
 @onready var btn_aumentar = $AumentarTempoAjuda
 @onready var btn_diminuir = $DiminuirTempoAjuda
-@onready var botao_click = get_parent().get_node("Click")
+
+func tocar_click() -> void:
+	var click = get_tree().current_scene.get_node_or_null("Click")
+	if click:
+		click.play()
 
 var tempo_de_dica: int:
 	set(value):
@@ -30,24 +34,24 @@ func _ready():
 	label.label_settings = label_settings
 	
 	# Conectar os sinais dos botões
-	btn_aumentar.connect("pressed", _aumentar_vidas)
-	btn_diminuir.connect("pressed", _diminuir_vidas)
+	btn_aumentar.connect("pressed", _aumentar_tempo_ajuda)
+	btn_diminuir.connect("pressed", _diminuir_tempo_ajuda)
 
-# Função para atualizar o label com a quantidade de vidas
-func atualizar_vidas():
+# Função para atualizar o label com o tempo de ajuda
+func atualizar_tempo_ajuda():
 	Configuracoes.salvar_todas_configuracoes()
-	label.text = str(tempo_de_dica)  # Atualiza o texto do Label
+	label.text = str(tempo_de_dica) + 's'
 
 # Função chamada quando o botão de aumentar é pressionado
-func _aumentar_vidas():
-	botao_click.play()
+func _aumentar_tempo_ajuda():
+	tocar_click()
 	if Configuracoes.config.nivel_de_dica == 30:
 		tempo_de_dica = 10
 	else:
 		tempo_de_dica += 10
 
-func _diminuir_vidas():
-	botao_click.play()
+func _diminuir_tempo_ajuda():
+	tocar_click()
 	if Configuracoes.config.nivel_de_dica == 10:
 		tempo_de_dica = 30
 	else:

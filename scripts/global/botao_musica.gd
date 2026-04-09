@@ -8,9 +8,9 @@ func _ready():
 
 func _atualizar_sprite(is_on: bool):
 	if is_on:
-		texture_normal = load("res://assets/menu/VolumeLigado.png")
+		texture_normal = load("res://recursos/menu/Botões/VolumeLigado.png")
 	else:
-		texture_normal = load("res://assets/menu/VolumeDesligado.png")
+		texture_normal = load("res://recursos/menu/Botões/VolumeDesligado.png")
 
 func _on_pressed():
 	Configuracoes.is_music_on = !Configuracoes.is_music_on

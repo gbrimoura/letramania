@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7yca6go0vkgy"
+path="res://.godot/imported/FlyAway8bits.mp3-93f62d7de1743dfc5d94edbb35931157.mp3str"
+
+[deps]
+
+source_file="res://recursos/musicas e fontes/FlyAway8bits.mp3"
+dest_files=["res://.godot/imported/FlyAway8bits.mp3-93f62d7de1743dfc5d94edbb35931157.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

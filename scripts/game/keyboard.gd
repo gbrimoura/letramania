@@ -31,17 +31,33 @@ func spawn_keys(word_list) -> void:
 		key_list.append(letter_node)
 		
 	key_list.shuffle()
-	
-	# posiciona no grid
-	var x = 204
-	var y = 370
-	for l in key_list:
-		if x == 954:
-			x = 204
-			y += 75
+
+	# posiciona no grid proporcional ao tamanho de tela
+	var viewport_size = get_viewport_rect().size
+	var viewport_w = viewport_size.x
+	var viewport_h = viewport_size.y
+	var columns = 10
+	var rows = int(ceil(float(key_list.size()) / float(columns)))
+	var side_margin = viewport_w * 0.045
+	var bottom_margin = viewport_h * 0.11
+	var available_w = viewport_w - (side_margin * 2.0)
+	var key_size = clamp(min((available_w / float(columns)) * 0.90, viewport_h * 0.092), 44.0, 78.0)
+	var horizontal_gap = clamp((available_w - (key_size * columns)) / float(max(columns - 1, 1)), 2.0, 8.0)
+	var vertical_gap = clamp(key_size * 0.10, 4.0, 9.0)
+	var row_block_w = (key_size * columns) + (horizontal_gap * (columns - 1))
+	var start_x = (viewport_w - row_block_w) / 2.0
+	var start_y = viewport_h - bottom_margin - (rows * key_size) - ((rows - 1) * vertical_gap)
+
+	for index in key_list.size():
+		var l = key_list[index]
+		var row = index / columns
+		var col = index % columns
+		var x = start_x + (col * (key_size + horizontal_gap))
+		var y = start_y + (row * (key_size + vertical_gap))
+		l.custom_minimum_size = Vector2(key_size, key_size)
+		l.size = Vector2(key_size, key_size)
 		l.position = Vector2(x, y)
 		l.original_position = l.position
-		x += 75
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

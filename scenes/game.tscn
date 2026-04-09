@@ -1,58 +1,60 @@
-[gd_scene load_steps=41 format=3 uid="uid://khsg2ndeh4xi"]
+[gd_scene format=3 uid="uid://khsg2ndeh4xi"]
 
-[ext_resource type="Texture2D" path="res://assets/background.png" id="1_itbuk"]
-[ext_resource type="Script" uid="uid://dbe0sxw4gurj2" path="res://scripts/game/occupied.gd" id="2_0v8sj"]
+[ext_resource type="Texture2D" uid="uid://btq728fkwb3m" path="res://assets/menu/background_Padrão.png" id="1_itbuk"]
+[ext_resource type="Script" uid="uid://dbe0sxw4gurj2" path="res://scripts/game/ocupado.gd" id="2_0v8sj"]
 [ext_resource type="Script" uid="uid://dymwyinhnvnoy" path="res://scripts/game/colission_area.gd" id="2_65ee8"]
 [ext_resource type="Script" uid="uid://dgqjnibp70508" path="res://scripts/game/game_buttons.gd" id="2_75y6d"]
-[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://assets/game/button-click.mp3" id="3_dbxom"]
-[ext_resource type="AudioStream" uid="uid://d4fynsv1uo2us" path="res://assets/game/wrong_5.mp3" id="3_pt5nm"]
+[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://recursos/jogo/button-click.mp3" id="3_dbxom"]
+[ext_resource type="AudioStream" uid="uid://d4fynsv1uo2us" path="res://recursos/jogo/wrong_5.mp3" id="3_pt5nm"]
 [ext_resource type="Script" uid="uid://bbs6c0p3xusfd" path="res://scripts/game/drag.gd" id="3_s6wji"]
-[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://assets/letras/a.png" id="4_75olx"]
-[ext_resource type="AudioStream" uid="uid://dd3sicceq2pxa" path="res://assets/game/answer-correct.mp3" id="4_l8fbo"]
-[ext_resource type="Texture2D" uid="uid://dwksg8fcc1hcb" path="res://assets/letras/b.png" id="6_f7p2w"]
+[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="4_75olx"]
+[ext_resource type="AudioStream" uid="uid://dd3sicceq2pxa" path="res://recursos/jogo/answer-correct.mp3" id="4_l8fbo"]
+[ext_resource type="Texture2D" uid="uid://dwksg8fcc1hcb" path="res://recursos/letras/b.png" id="6_f7p2w"]
 [ext_resource type="Script" uid="uid://d1i4rpl6mk0ig" path="res://scripts/game/gaps.gd" id="6_sg7ji"]
-[ext_resource type="Texture2D" uid="uid://cu8wnnoduap2l" path="res://assets/letras/c.png" id="7_uss7y"]
-[ext_resource type="Texture2D" uid="uid://b56n6qyo6l51j" path="res://assets/letras/d.png" id="8_f36fc"]
-[ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://assets/letras/e.png" id="9_isedl"]
+[ext_resource type="Texture2D" uid="uid://cu8wnnoduap2l" path="res://recursos/letras/c.png" id="7_uss7y"]
+[ext_resource type="Texture2D" uid="uid://b56n6qyo6l51j" path="res://recursos/letras/d.png" id="8_f36fc"]
+[ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://recursos/letras/e.png" id="9_isedl"]
 [ext_resource type="Script" uid="uid://bw4m4th0qoms2" path="res://scripts/game/keyboard.gd" id="9_sll30"]
-[ext_resource type="Texture2D" uid="uid://c81ntatbx84im" path="res://assets/letras/f.png" id="10_obdsf"]
-[ext_resource type="Texture2D" uid="uid://cnh4rfa0y7nep" path="res://assets/letras/g.png" id="11_m2kqo"]
-[ext_resource type="Texture2D" uid="uid://dc1tx6niopean" path="res://assets/letras/h.png" id="12_p8qqq"]
-[ext_resource type="Texture2D" uid="uid://bu6vn3gfx3xv6" path="res://assets/letras/i.png" id="13_62enl"]
-[ext_resource type="Texture2D" uid="uid://by5yfq650btj4" path="res://assets/letras/j.png" id="14_ferq6"]
-[ext_resource type="Texture2D" uid="uid://b2wmbjvsu72xr" path="res://assets/letras/l.png" id="15_e86ls"]
-[ext_resource type="Texture2D" uid="uid://cxn7bo4qgwsn4" path="res://assets/letras/m.png" id="16_vnwhf"]
-[ext_resource type="Texture2D" uid="uid://b23ut4623xvro" path="res://assets/letras/n.png" id="17_i0iox"]
-[ext_resource type="Texture2D" uid="uid://bvrcbvavjobie" path="res://assets/letras/o.png" id="18_qv8pp"]
-[ext_resource type="Texture2D" uid="uid://cym5f2qsfpxig" path="res://assets/letras/p.png" id="19_yhylh"]
-[ext_resource type="Texture2D" uid="uid://bsiu140uwav2w" path="res://assets/letras/q.png" id="20_nru7l"]
-[ext_resource type="Texture2D" uid="uid://dadwlsm5lbuyn" path="res://assets/letras/r.png" id="21_8cf0q"]
-[ext_resource type="Texture2D" uid="uid://dr0bmk1mqct1h" path="res://assets/letras/s.png" id="22_yex56"]
-[ext_resource type="Texture2D" uid="uid://deu0g3wlv2nr4" path="res://assets/letras/t.png" id="23_fud1g"]
-[ext_resource type="Texture2D" uid="uid://buqrxymgc167y" path="res://assets/letras/u.png" id="24_avysu"]
-[ext_resource type="Texture2D" uid="uid://bkduj3o8acbx5" path="res://assets/letras/v.png" id="25_mq4gg"]
-[ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://assets/menu/Botões/VolumeLigado.png" id="27_qvc70"]
-[ext_resource type="Texture2D" uid="uid://dfjicxsrvg43b" path="res://assets/letras/k.png" id="27_toop0"]
-[ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://assets/menu/Botões/VolumeDesligado.png" id="28_bcere"]
-[ext_resource type="Texture2D" uid="uid://dmnavv8g5abl0" path="res://assets/letras/w.png" id="28_k5ttn"]
-[ext_resource type="Texture2D" uid="uid://dn7vqbbk0d2oq" path="res://assets/letras/y.png" id="29_t5wpc"]
-[ext_resource type="Texture2D" uid="uid://bpv34u1p0j71l" path="res://assets/letras/z.png" id="30_631hs"]
-[ext_resource type="Texture2D" uid="uid://wblgq314faxd" path="res://assets/letras/x.png" id="31_fwf74"]
+[ext_resource type="Texture2D" uid="uid://c81ntatbx84im" path="res://recursos/letras/f.png" id="10_obdsf"]
+[ext_resource type="Texture2D" uid="uid://cnh4rfa0y7nep" path="res://recursos/letras/g.png" id="11_m2kqo"]
+[ext_resource type="Texture2D" uid="uid://dc1tx6niopean" path="res://recursos/letras/h.png" id="12_p8qqq"]
+[ext_resource type="Texture2D" uid="uid://bu6vn3gfx3xv6" path="res://recursos/letras/i.png" id="13_62enl"]
+[ext_resource type="Texture2D" uid="uid://by5yfq650btj4" path="res://recursos/letras/j.png" id="14_ferq6"]
+[ext_resource type="Texture2D" uid="uid://b2wmbjvsu72xr" path="res://recursos/letras/l.png" id="15_e86ls"]
+[ext_resource type="Texture2D" uid="uid://cxn7bo4qgwsn4" path="res://recursos/letras/m.png" id="16_vnwhf"]
+[ext_resource type="Texture2D" uid="uid://b23ut4623xvro" path="res://recursos/letras/n.png" id="17_i0iox"]
+[ext_resource type="Texture2D" uid="uid://bvrcbvavjobie" path="res://recursos/letras/o.png" id="18_qv8pp"]
+[ext_resource type="Texture2D" uid="uid://cym5f2qsfpxig" path="res://recursos/letras/p.png" id="19_yhylh"]
+[ext_resource type="Texture2D" uid="uid://bsiu140uwav2w" path="res://recursos/letras/q.png" id="20_nru7l"]
+[ext_resource type="Texture2D" uid="uid://dadwlsm5lbuyn" path="res://recursos/letras/r.png" id="21_8cf0q"]
+[ext_resource type="Texture2D" uid="uid://dr0bmk1mqct1h" path="res://recursos/letras/s.png" id="22_yex56"]
+[ext_resource type="Texture2D" uid="uid://deu0g3wlv2nr4" path="res://recursos/letras/t.png" id="23_fud1g"]
+[ext_resource type="Texture2D" uid="uid://buqrxymgc167y" path="res://recursos/letras/u.png" id="24_avysu"]
+[ext_resource type="Texture2D" uid="uid://bkduj3o8acbx5" path="res://recursos/letras/v.png" id="25_mq4gg"]
+[ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://recursos/menu/Botões/VolumeLigado.png" id="27_qvc70"]
+[ext_resource type="Texture2D" uid="uid://dfjicxsrvg43b" path="res://recursos/letras/k.png" id="27_toop0"]
+[ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://recursos/menu/Botões/VolumeDesligado.png" id="28_bcere"]
+[ext_resource type="Texture2D" uid="uid://dmnavv8g5abl0" path="res://recursos/letras/w.png" id="28_k5ttn"]
+[ext_resource type="Texture2D" uid="uid://dn7vqbbk0d2oq" path="res://recursos/letras/y.png" id="29_t5wpc"]
+[ext_resource type="Texture2D" uid="uid://bpv34u1p0j71l" path="res://recursos/letras/z.png" id="30_631hs"]
+[ext_resource type="Texture2D" uid="uid://wblgq314faxd" path="res://recursos/letras/x.png" id="31_fwf74"]
 [ext_resource type="Script" uid="uid://c16aya8f236vp" path="res://scripts/global/botao_musica.gd" id="34_0w6ho"]
-[ext_resource type="Texture2D" uid="uid://dpduir8dbxkk7" path="res://assets/config/Voltar.png" id="37_k363v"]
+[ext_resource type="Texture2D" uid="uid://dpduir8dbxkk7" path="res://recursos/config/Voltar.png" id="37_k363v"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=226196886]
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1894273592]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 5.0
-offset_bottom = 5.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("2_75y6d")
 
-[node name="Background" type="TextureRect" parent="Control"]
+[node name="Background" type="TextureRect" parent="Control" unique_id=1046924644]
 z_index = -2
-layout_mode = 2
+layout_mode = 0
 offset_right = 40.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -60,43 +62,43 @@ texture = ExtResource("1_itbuk")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Click" type="AudioStreamPlayer" parent="Control"]
+[node name="Click" type="AudioStreamPlayer" parent="Control" unique_id=810106960]
 stream = ExtResource("3_dbxom")
 volume_db = -10.0
 
-[node name="Errado" type="AudioStreamPlayer" parent="Control"]
+[node name="Errado" type="AudioStreamPlayer" parent="Control" unique_id=1945811143]
 stream = ExtResource("3_pt5nm")
 volume_db = -20.0
 
-[node name="Correto" type="AudioStreamPlayer" parent="Control"]
+[node name="Correto" type="AudioStreamPlayer" parent="Control" unique_id=887340125]
 stream = ExtResource("4_l8fbo")
 volume_db = -15.0
 
-[node name="Voltar" type="Button" parent="Control"]
-clip_contents = true
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 0
-offset_left = 1038.0
-offset_top = 558.0
-offset_right = 1558.0
-offset_bottom = 1078.0
-scale = Vector2(0.15, 0.15)
-focus_mode = 0
-action_mode = 0
-icon = ExtResource("37_k363v")
-flat = true
-icon_alignment = 1
-
-[node name="MusgaOnOff" type="TextureButton" parent="Control"]
+[node name="Voltar" type="TextureButton" parent="Control" unique_id=2147479914]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 553.0
-offset_right = 100.0
-offset_bottom = 623.0
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 70.0
+offset_bottom = 70.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+action_mode = 0
+texture_normal = ExtResource("37_k363v")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MusgaOnOff" type="TextureButton" parent="Control" unique_id=2034384228]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 70.0
+offset_bottom = 70.0
+grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
 action_mode = 0
@@ -108,13 +110,13 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("34_0w6ho")
 
-[node name="Lacunas" type="Control" parent="Control"]
+[node name="Lacunas" type="Control" parent="Control" unique_id=1228844269]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("6_sg7ji")
 
-[node name="Arrastável" type="ColorRect" parent="Control/Lacunas" groups=["arrastaveis"]]
+[node name="Arrastável" type="ColorRect" parent="Control/Lacunas" unique_id=63160368 groups=["arrastaveis"]]
 layout_mode = 0
 offset_left = -279.0
 offset_top = 195.0
@@ -123,10 +125,10 @@ offset_bottom = 265.0
 color = Color(1, 1, 1, 0.196078)
 script = ExtResource("2_0v8sj")
 
-[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável"]
+[node name="AreaColisao" type="Area2D" parent="Control/Lacunas/Arrastável" unique_id=1673854636]
 script = ExtResource("2_65ee8")
 
-[node name="Letras" type="Control" parent="Control"]
+[node name="Letras" type="Control" parent="Control" unique_id=333330757]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -136,7 +138,7 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("9_sll30")
 
-[node name="A" type="Button" parent="Control/Letras"]
+[node name="A" type="Button" parent="Control/Letras" unique_id=619786476]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -1018.0
@@ -149,7 +151,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="ATip" type="Button" parent="Control/Letras"]
+[node name="ATip" type="Button" parent="Control/Letras" unique_id=48201601]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -1018.0
@@ -162,7 +164,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="B" type="Button" parent="Control/Letras"]
+[node name="B" type="Button" parent="Control/Letras" unique_id=1661250662]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -618.0
@@ -175,7 +177,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="C" type="Button" parent="Control/Letras"]
+[node name="C" type="Button" parent="Control/Letras" unique_id=62374850]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -778.0
@@ -188,7 +190,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="D" type="Button" parent="Control/Letras"]
+[node name="D" type="Button" parent="Control/Letras" unique_id=1106453349]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -858.0
@@ -201,7 +203,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="E" type="Button" parent="Control/Letras"]
+[node name="E" type="Button" parent="Control/Letras" unique_id=1952041640]
 custom_minimum_size = Vector2(65, 65)
 layout_mode = 0
 offset_left = -898.0
@@ -214,7 +216,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="F" type="Button" parent="Control/Letras"]
+[node name="F" type="Button" parent="Control/Letras" unique_id=848962266]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -778.0
@@ -227,7 +229,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="G" type="Button" parent="Control/Letras"]
+[node name="G" type="Button" parent="Control/Letras" unique_id=793519048]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -698.0
@@ -240,7 +242,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="H" type="Button" parent="Control/Letras"]
+[node name="H" type="Button" parent="Control/Letras" unique_id=1836894430]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -618.0
@@ -253,7 +255,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="I" type="Button" parent="Control/Letras"]
+[node name="I" type="Button" parent="Control/Letras" unique_id=1070041225]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -498.0
@@ -266,7 +268,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="J" type="Button" parent="Control/Letras"]
+[node name="J" type="Button" parent="Control/Letras" unique_id=194802913]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -538.0
@@ -279,7 +281,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="L" type="Button" parent="Control/Letras"]
+[node name="L" type="Button" parent="Control/Letras" unique_id=1845507675]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -378.0
@@ -292,7 +294,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="M" type="Button" parent="Control/Letras"]
+[node name="M" type="Button" parent="Control/Letras" unique_id=518344671]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -458.0
@@ -305,7 +307,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="N" type="Button" parent="Control/Letras"]
+[node name="N" type="Button" parent="Control/Letras" unique_id=1120934265]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -538.0
@@ -318,7 +320,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="O" type="Button" parent="Control/Letras"]
+[node name="O" type="Button" parent="Control/Letras" unique_id=1844251574]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -418.0
@@ -331,7 +333,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="P" type="Button" parent="Control/Letras"]
+[node name="P" type="Button" parent="Control/Letras" unique_id=1496753179]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -338.0
@@ -344,7 +346,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="Q" type="Button" parent="Control/Letras"]
+[node name="Q" type="Button" parent="Control/Letras" unique_id=1584060140]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -1058.0
@@ -357,7 +359,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="R" type="Button" parent="Control/Letras"]
+[node name="R" type="Button" parent="Control/Letras" unique_id=286221407]
 custom_minimum_size = Vector2(65, 65)
 layout_mode = 0
 offset_left = -818.0
@@ -370,7 +372,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="S" type="Button" parent="Control/Letras"]
+[node name="S" type="Button" parent="Control/Letras" unique_id=1920150669]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -938.0
@@ -383,7 +385,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="T" type="Button" parent="Control/Letras"]
+[node name="T" type="Button" parent="Control/Letras" unique_id=197886]
 custom_minimum_size = Vector2(65, 65)
 layout_mode = 0
 offset_left = -738.0
@@ -396,7 +398,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="U" type="Button" parent="Control/Letras"]
+[node name="U" type="Button" parent="Control/Letras" unique_id=1367821165]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -578.0
@@ -409,7 +411,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="V" type="Button" parent="Control/Letras"]
+[node name="V" type="Button" parent="Control/Letras" unique_id=504274827]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -698.0
@@ -422,7 +424,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="K" type="Button" parent="Control/Letras"]
+[node name="K" type="Button" parent="Control/Letras" unique_id=1535175388]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -458.0
@@ -435,7 +437,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="W" type="Button" parent="Control/Letras"]
+[node name="W" type="Button" parent="Control/Letras" unique_id=459138377]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -978.0
@@ -448,7 +450,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="Y" type="Button" parent="Control/Letras"]
+[node name="Y" type="Button" parent="Control/Letras" unique_id=910440067]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -658.0
@@ -461,7 +463,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="Z" type="Button" parent="Control/Letras"]
+[node name="Z" type="Button" parent="Control/Letras" unique_id=1367391560]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -938.0
@@ -474,7 +476,7 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="X" type="Button" parent="Control/Letras"]
+[node name="X" type="Button" parent="Control/Letras" unique_id=429262180]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 0
 offset_left = -858.0
@@ -487,12 +489,12 @@ flat = true
 expand_icon = true
 script = ExtResource("3_s6wji")
 
-[node name="Simbolos" type="Node2D" parent="Control"]
+[node name="Simbolos" type="Node2D" parent="Control" unique_id=208764573]
 
-[node name="Timer" type="Timer" parent="Control"]
+[node name="Timer" type="Timer" parent="Control" unique_id=2028429619]
 autostart = true
 
-[node name="Tempo" type="Label" parent="Control"]
+[node name="Tempo" type="Label" parent="Control" unique_id=1788564783]
 layout_mode = 0
 offset_left = 24.0
 offset_right = 124.0
@@ -500,7 +502,7 @@ offset_bottom = 75.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Pontuação" type="Label" parent="Control"]
+[node name="Pontuação" type="Label" parent="Control" unique_id=69082131]
 layout_mode = 0
 offset_left = 535.0
 offset_right = 635.0
@@ -508,7 +510,7 @@ offset_bottom = 75.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Vidas" type="Label" parent="Control"]
+[node name="Vidas" type="Label" parent="Control" unique_id=1469343908]
 layout_mode = 0
 offset_left = 975.0
 offset_right = 1075.0
@@ -516,7 +518,8 @@ offset_bottom = 75.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Control"]
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Control" unique_id=168230586]
+oversampling_override = 1.0
 initial_position = 2
 size = Vector2i(400, 200)
 visible = true

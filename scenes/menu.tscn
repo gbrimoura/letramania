@@ -1,29 +1,31 @@
-[gd_scene load_steps=23 format=3 uid="uid://b4pw1nhcnhfnr"]
+[gd_scene format=3 uid="uid://b4pw1nhcnhfnr"]
 
-[ext_resource type="Texture2D" path="res://assets/background.png" id="1_04q62"]
+[ext_resource type="Texture2D" uid="uid://btq728fkwb3m" path="res://assets/menu/background_Padrão.png" id="1_04q62"]
 [ext_resource type="Script" uid="uid://cgy4mskjc7kxy" path="res://scripts/menu/botoesMenu.gd" id="1_qvqax"]
-[ext_resource type="Texture2D" uid="uid://43koqftg6bdf" path="res://assets/menu/Botões/IniciarBase.png" id="3_w46fu"]
-[ext_resource type="Texture2D" uid="uid://osti8074u6kb" path="res://assets/menu/Botões/IniciarPressed.png" id="4_hsc1j"]
-[ext_resource type="Texture2D" uid="uid://r814d3g8xu4d" path="res://assets/menu/Botões/IniciarHighlight.png" id="5_hm2o2"]
-[ext_resource type="Texture2D" uid="uid://bbie1elr8c2lx" path="res://assets/menu/Botões/SairBase.png" id="6_phrpi"]
-[ext_resource type="Texture2D" uid="uid://cikvdk570qy0t" path="res://assets/menu/Botões/SairPressed.png" id="7_epbvh"]
-[ext_resource type="Texture2D" uid="uid://b2716ysh5gmot" path="res://assets/menu/Botões/SairHighlight.png" id="8_6l7ad"]
-[ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://assets/menu/Botões/VolumeLigado.png" id="10_w364o"]
+[ext_resource type="Texture2D" uid="uid://43koqftg6bdf" path="res://recursos/menu/Botões/IniciarBase.png" id="3_w46fu"]
+[ext_resource type="Texture2D" uid="uid://osti8074u6kb" path="res://recursos/menu/Botões/IniciarPressed.png" id="4_hsc1j"]
+[ext_resource type="Texture2D" uid="uid://r814d3g8xu4d" path="res://recursos/menu/Botões/IniciarHighlight.png" id="5_hm2o2"]
+[ext_resource type="Texture2D" uid="uid://bbie1elr8c2lx" path="res://recursos/menu/Botões/SairBase.png" id="6_phrpi"]
+[ext_resource type="Texture2D" uid="uid://cikvdk570qy0t" path="res://recursos/menu/Botões/SairPressed.png" id="7_epbvh"]
+[ext_resource type="Texture2D" uid="uid://b2716ysh5gmot" path="res://recursos/menu/Botões/SairHighlight.png" id="8_6l7ad"]
+[ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://recursos/menu/Botões/VolumeLigado.png" id="10_w364o"]
 [ext_resource type="Script" uid="uid://c16aya8f236vp" path="res://scripts/global/botao_musica.gd" id="11_e6i2m"]
-[ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://assets/menu/Botões/VolumeDesligado.png" id="11_njevh"]
-[ext_resource type="Texture2D" uid="uid://nqbcjwwt8lf6" path="res://assets/menu/Botões/Configuração.png" id="13_m2x8x"]
+[ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://recursos/menu/Botões/VolumeDesligado.png" id="11_njevh"]
+[ext_resource type="Texture2D" uid="uid://nqbcjwwt8lf6" path="res://recursos/menu/Botões/Configuração.png" id="13_m2x8x"]
 [ext_resource type="Script" uid="uid://csky1bv8v7byq" path="res://scripts/menu/girando.gd" id="15_0vx88"]
-[ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://assets/letras/e.png" id="15_vdtvp"]
-[ext_resource type="Texture2D" uid="uid://deu0g3wlv2nr4" path="res://assets/letras/t.png" id="16_o87y4"]
-[ext_resource type="Texture2D" uid="uid://dadwlsm5lbuyn" path="res://assets/letras/r.png" id="17_p1gw0"]
-[ext_resource type="Texture2D" uid="uid://cxn7bo4qgwsn4" path="res://assets/letras/m.png" id="18_d7kp2"]
-[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://assets/letras/a.png" id="19_gpfhg"]
-[ext_resource type="Texture2D" uid="uid://b23ut4623xvro" path="res://assets/letras/n.png" id="20_be8vm"]
-[ext_resource type="Texture2D" uid="uid://bu6vn3gfx3xv6" path="res://assets/letras/i.png" id="21_n7w1d"]
-[ext_resource type="Texture2D" uid="uid://b2wmbjvsu72xr" path="res://assets/letras/l.png" id="21_xdyxl"]
-[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://assets/game/button-click.mp3" id="22_xdh42"]
+[ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://recursos/letras/e.png" id="15_vdtvp"]
+[ext_resource type="Texture2D" uid="uid://deu0g3wlv2nr4" path="res://recursos/letras/t.png" id="16_o87y4"]
+[ext_resource type="Texture2D" uid="uid://dadwlsm5lbuyn" path="res://recursos/letras/r.png" id="17_p1gw0"]
+[ext_resource type="Texture2D" uid="uid://cxn7bo4qgwsn4" path="res://recursos/letras/m.png" id="18_d7kp2"]
+[ext_resource type="Texture2D" uid="uid://c5qjutpc0vobl" path="res://recursos/letras/a.png" id="19_gpfhg"]
+[ext_resource type="Texture2D" uid="uid://b23ut4623xvro" path="res://recursos/letras/n.png" id="20_be8vm"]
+[ext_resource type="Texture2D" uid="uid://bu6vn3gfx3xv6" path="res://recursos/letras/i.png" id="21_n7w1d"]
+[ext_resource type="Texture2D" uid="uid://b2wmbjvsu72xr" path="res://recursos/letras/l.png" id="21_xdyxl"]
+[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://recursos/jogo/button-click.mp3" id="22_xdh42"]
+[ext_resource type="Texture2D" uid="uid://84p7i4jg2gl6" path="res://assets/background.png" id="23_6wigr"]
+[ext_resource type="Script" uid="uid://i1k6wjqillcn" path="res://scripts/configs/PacienteIdMenu.gd" id="24_lnf0i"]
 
-[node name="Control" type="Control"]
+[node name="Control" type="Control" unique_id=186204072]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_qvqax")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="." unique_id=1343945099]
 layout_direction = 2
 layout_mode = 1
 anchors_preset = 15
@@ -43,24 +45,22 @@ grow_vertical = 2
 texture = ExtResource("1_04q62")
 expand_mode = 1
 
-[node name="Click" type="AudioStreamPlayer" parent="."]
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=134299273]
 stream = ExtResource("22_xdh42")
 volume_db = -10.0
 
-[node name="Botoes" type="Control" parent="."]
+[node name="Botoes" type="Control" parent="." unique_id=282360092]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
 offset_top = -40.0
-offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Iniciar" type="TextureButton" parent="Botoes"]
+[node name="Iniciar" type="TextureButton" parent="Botoes" unique_id=286414066]
 custom_minimum_size = Vector2(400, 120)
 layout_mode = 1
 anchors_preset = 8
@@ -68,9 +68,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -206.0
+offset_left = -200.0
 offset_top = -314.0
-offset_right = 194.0
+offset_right = 200.0
 offset_bottom = -194.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -80,7 +80,7 @@ texture_hover = ExtResource("5_hm2o2")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Sair" type="TextureButton" parent="Botoes"]
+[node name="Sair" type="TextureButton" parent="Botoes" unique_id=969141173]
 custom_minimum_size = Vector2(400, 120)
 layout_mode = 1
 anchors_preset = 8
@@ -88,10 +88,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -206.0
-offset_top = -144.0
-offset_right = 194.0
-offset_bottom = -24.0
+offset_left = -200.0
+offset_top = -164.0
+offset_right = 200.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("6_phrpi")
@@ -100,7 +100,7 @@ texture_hover = ExtResource("8_6l7ad")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="MusgaOnOff" type="TextureButton" parent="Botoes"]
+[node name="MusgaOnOff" type="TextureButton" parent="Botoes" unique_id=874359419]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
 anchors_preset = 2
@@ -121,7 +121,7 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("11_e6i2m")
 
-[node name="Configuraçoes" type="TextureButton" parent="Botoes"]
+[node name="Configuraçoes" type="TextureButton" parent="Botoes" unique_id=1506550373]
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 1
 anchors_preset = 3
@@ -129,9 +129,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 450.0
+offset_left = 462.0
 offset_top = -96.0
-offset_right = 520.0
+offset_right = 532.0
 offset_bottom = -26.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -143,70 +143,123 @@ texture_normal = ExtResource("13_m2x8x")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Titulo" type="Node2D" parent="."]
+[node name="Titulo" type="Node2D" parent="." unique_id=1653956836]
 position = Vector2(564, 134)
 script = ExtResource("15_0vx88")
 
-[node name="L" type="Sprite2D" parent="Titulo"]
+[node name="L" type="Sprite2D" parent="Titulo" unique_id=564381910]
 position = Vector2(-231, -41.6284)
 rotation = -0.0523599
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("21_xdyxl")
 
-[node name="E" type="Sprite2D" parent="Titulo"]
+[node name="E" type="Sprite2D" parent="Titulo" unique_id=1933112925]
 position = Vector2(-111, -41.6284)
 rotation = 0.0610865
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_vdtvp")
 
-[node name="T" type="Sprite2D" parent="Titulo"]
+[node name="T" type="Sprite2D" parent="Titulo" unique_id=840425365]
 position = Vector2(9, -41.6284)
 rotation = -0.0698132
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("16_o87y4")
 
-[node name="R" type="Sprite2D" parent="Titulo"]
+[node name="R" type="Sprite2D" parent="Titulo" unique_id=2131206366]
 position = Vector2(129, -41.6284)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("17_p1gw0")
 
-[node name="A" type="Sprite2D" parent="Titulo"]
+[node name="A" type="Sprite2D" parent="Titulo" unique_id=1235864955]
 position = Vector2(249, -41.6284)
 rotation = 0.0436332
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("19_gpfhg")
 
-[node name="M" type="Sprite2D" parent="Titulo"]
+[node name="M" type="Sprite2D" parent="Titulo" unique_id=1462635627]
 position = Vector2(-231, 58.3716)
 rotation = 0.0610865
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("18_d7kp2")
 
-[node name="A2" type="Sprite2D" parent="Titulo"]
+[node name="A2" type="Sprite2D" parent="Titulo" unique_id=1112218374]
 position = Vector2(-111, 58.3716)
 rotation = -0.0436332
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("19_gpfhg")
 
-[node name="N" type="Sprite2D" parent="Titulo"]
+[node name="N" type="Sprite2D" parent="Titulo" unique_id=1162023922]
 position = Vector2(9.00006, 58.3716)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("20_be8vm")
 
-[node name="I" type="Sprite2D" parent="Titulo"]
+[node name="I" type="Sprite2D" parent="Titulo" unique_id=1191146329]
 position = Vector2(129, 58.3716)
 rotation = 0.0523599
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("21_n7w1d")
 
-[node name="A3" type="Sprite2D" parent="Titulo"]
+[node name="A3" type="Sprite2D" parent="Titulo" unique_id=942367649]
 position = Vector2(249, 58.3716)
 rotation = -0.0610865
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("19_gpfhg")
+
+[node name="PacienteMenu" type="TextureRect" parent="." unique_id=286201216]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_6wigr")
+expand_mode = 1
+script = ExtResource("24_lnf0i")
+
+[node name="PacienteIdInput" type="LineEdit" parent="PacienteMenu" unique_id=592875754]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -151.5
+offset_right = 200.0
+offset_bottom = -33.5
+grow_horizontal = 2
+grow_vertical = 2
+placeholder_text = "Id do paciente aqui...."
+alignment = 1
+max_length = 500
+
+[node name="Salvar" type="TextureButton" parent="PacienteMenu" unique_id=1162704297]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = 17.5
+offset_right = 200.0
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_w46fu")
+texture_pressed = ExtResource("4_hsc1j")
+texture_hover = ExtResource("5_hm2o2")
+ignore_texture_size = true
+stretch_mode = 5
 
 [connection signal="pressed" from="Botoes/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="Botoes/Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="Botoes/MusgaOnOff" to="." method="_on_musga_on_off_pressed"]
 [connection signal="pressed" from="Botoes/MusgaOnOff" to="Botoes/MusgaOnOff" method="_on_pressed"]
 [connection signal="pressed" from="Botoes/Configuraçoes" to="." method="_on_configuraçoes_pressed"]
+[connection signal="pressed" from="PacienteMenu/Salvar" to="PacienteMenu" method="_on_botao_confirmar_pressed"]

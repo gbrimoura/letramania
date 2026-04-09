@@ -4,7 +4,14 @@ extends Control
 @onready var label = $Tema
 @onready var btn_direita = $DireitaTema
 @onready var btn_esquerda = $EsquerdaTema
-@onready var botao_click = get_parent().get_node("Click")
+
+func tocar_click() -> void:
+	var click = get_tree().current_scene.get_node_or_null("Click")
+	if click:
+		click.play()
+
+func get_background() -> TextureRect:
+	return get_tree().current_scene.get_node_or_null("Background")
 
 var id_tema: int:
 	set(value):
@@ -19,7 +26,9 @@ var id_tema: int:
 func _ready():
 	
 	id_tema = Configuracoes.config.tema
-	$"../Background".texture = load("res://assets/menu/background_" + Configuracoes.nome_tema + ".png")
+	var background = get_background()
+	if background:
+		background.texture = load("res://assets/menu/background_" + Configuracoes.nome_tema + ".png")
 	label.text = Configuracoes.lista_temas[id_tema]
 
 	# Configurações do Label (Godot 4)
@@ -42,20 +51,24 @@ func atualizar_tema():
 
 # Função chamada quando o botão de aumentar é pressionado
 func _prox_tema():
-	botao_click.play()
+	tocar_click()
 	if Configuracoes.config.tema == 3:
 		id_tema = 0
 	else:
 		id_tema += 1
 	Configuracoes.nome_tema = Configuracoes.lista_temas[id_tema]
-	$"../Background".texture = load("res://assets/menu/background_" + Configuracoes.nome_tema + ".png")
+	var background = get_background()
+	if background:
+		background.texture = load("res://assets/menu/background_" + Configuracoes.nome_tema + ".png")
 
 func _ante_tema():
-	botao_click.play()
+	tocar_click()
 	if Configuracoes.config.tema == 0:
 		id_tema = 3
 	else:
 		id_tema -= 1
 	Configuracoes.nome_tema = Configuracoes.lista_temas[id_tema]
-	$"../Background".texture = load("res://assets/menu/background_" + Configuracoes.nome_tema + ".png")
+	var background = get_background()
+	if background:
+		background.texture = load("res://assets/menu/background_" + Configuracoes.nome_tema + ".png")
 	

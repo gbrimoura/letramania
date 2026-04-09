@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://klts52bc3exe"]
 
-[ext_resource type="Texture2D" path="res://assets/background.png" id="1_j6arj"]
+[ext_resource type="Texture2D" uid="uid://btq728fkwb3m" path="res://assets/menu/background_Padrão.png" id="1_j6arj"]
 [ext_resource type="Script" uid="uid://dk8enqjdeb3r4" path="res://scripts/configs/botoesConfig.gd" id="1_w7iws"]
-[ext_resource type="Texture2D" uid="uid://b1u1celrxklxs" path="res://assets/config/Retangulo_Opaco.png" id="3_bl5ny"]
-[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://assets/game/button-click.mp3" id="3_m5bkl"]
-[ext_resource type="Texture2D" uid="uid://dpduir8dbxkk7" path="res://assets/config/Voltar.png" id="3_sccdn"]
-[ext_resource type="FontFile" uid="uid://dghd7xtaj5ayp" path="res://assets/musicas e fontes/Gilroy-Bold.ttf" id="5_0tuuy"]
-[ext_resource type="Texture2D" uid="uid://dap2csy3ys3yk" path="res://assets/config/BotaoOff.png" id="5_ayfbt"]
-[ext_resource type="Texture2D" uid="uid://rfeqigdscj1d" path="res://assets/config/BotaoOn.png" id="6_jrev4"]
+[ext_resource type="Texture2D" uid="uid://b1u1celrxklxs" path="res://recursos/config/Retangulo_Opaco.png" id="3_bl5ny"]
+[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://recursos/jogo/button-click.mp3" id="3_m5bkl"]
+[ext_resource type="Texture2D" uid="uid://dpduir8dbxkk7" path="res://recursos/config/Voltar.png" id="3_sccdn"]
+[ext_resource type="FontFile" uid="uid://dghd7xtaj5ayp" path="res://recursos/musicas e fontes/Gilroy-Bold.ttf" id="5_0tuuy"]
+[ext_resource type="Texture2D" uid="uid://dap2csy3ys3yk" path="res://recursos/config/BotaoOff.png" id="5_ayfbt"]
+[ext_resource type="Texture2D" uid="uid://rfeqigdscj1d" path="res://recursos/config/BotaoOn.png" id="6_jrev4"]
 [ext_resource type="Script" uid="uid://de5dpldi4eoft" path="res://scripts/configs/controleVida.gd" id="7_me3g6"]
-[ext_resource type="Texture2D" uid="uid://cp1vqk14mrjlb" path="res://assets/config/BotaoQuantidade.png" id="8_evu5t"]
+[ext_resource type="Texture2D" uid="uid://cp1vqk14mrjlb" path="res://recursos/config/BotaoQuantidade.png" id="8_evu5t"]
 [ext_resource type="Script" uid="uid://b3kjq3ryg47k1" path="res://scripts/configs/controleTempoAjuda.gd" id="11_vbxg0"]
 [ext_resource type="Script" uid="uid://c6rgevw67q1qu" path="res://scripts/configs/controleTema.gd" id="12_d33r4"]
 
@@ -39,25 +39,32 @@ stretch_mode = 6
 stream = ExtResource("3_m5bkl")
 volume_db = -10.0
 
+[node name="BlocoConfiguracao" type="Control" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="FundoTexto" type="Sprite2D" parent="."]
 position = Vector2(576, 332)
 scale = Vector2(0.451765, 0.45)
 texture = ExtResource("3_bl5ny")
 
-[node name="Voltar" type="Button" parent="."]
-clip_contents = true
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 0
-offset_left = 30.0
-offset_top = 558.0
-offset_right = 550.0
-offset_bottom = 1078.0
-scale = Vector2(0.15, 0.15)
+[node name="Voltar" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -96.0
+offset_right = 94.0
+offset_bottom = -26.0
+grow_vertical = 0
 focus_mode = 0
 action_mode = 0
-icon = ExtResource("3_sccdn")
-flat = true
-icon_alignment = 1
+texture_normal = ExtResource("3_sccdn")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="LabelPontuação" type="Label" parent="."]
 layout_mode = 0

@@ -3,7 +3,11 @@ extends Control
 @onready var label = $Vidas
 @onready var btn_aumentar = $AumentarVidas
 @onready var btn_diminuir = $DiminuirVidas
-@onready var botao_click = get_parent().get_node("Click")
+
+func tocar_click() -> void:
+	var click = get_tree().current_scene.get_node_or_null("Click")
+	if click:
+		click.play()
 
 var vidas_iniciais: int:
 	set(value):
@@ -20,6 +24,8 @@ var vidas_iniciais: int:
 
 func _ready():
 	vidas_iniciais = Configuracoes.config.vidas
+	Jogo.vidas_iniciais = vidas_iniciais if vidas_iniciais != -1 else 999
+	
 	label.text = "∞" if vidas_iniciais == -1 else str(vidas_iniciais)
 
 	# Fonte personalizada
@@ -37,9 +43,11 @@ func _ready():
 func atualizar_vidas():
 	label.text = "∞" if vidas_iniciais == -1 else str(vidas_iniciais)
 	Configuracoes.salvar_todas_configuracoes()
+	
+	Jogo.vidas_finais = vidas_iniciais if vidas_iniciais != -1 else 999
 
 func _aumentar_vidas():
-	botao_click.play()
+	tocar_click()
 	if vidas_iniciais == -1:
 		vidas_iniciais = 1
 	elif vidas_iniciais == 11:
@@ -48,7 +56,7 @@ func _aumentar_vidas():
 		vidas_iniciais += 1
 
 func _diminuir_vidas():
-	botao_click.play()
+	tocar_click()
 	if vidas_iniciais == -1:
 		vidas_iniciais = 11
 	elif vidas_iniciais == 1:

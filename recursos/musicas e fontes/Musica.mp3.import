@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://l6w5t5jvfilm"
+path="res://.godot/imported/Musica.mp3-afb04299069c1d1904b20fe3b08d012c.mp3str"
+
+[deps]
+
+source_file="res://recursos/musicas e fontes/Musica.mp3"
+dest_files=["res://.godot/imported/Musica.mp3-afb04299069c1d1904b20fe3b08d012c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

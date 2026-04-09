@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blqeo0ubpwdvu"
+path="res://.godot/imported/Melissa8Bits.mp3-432e1c0aa9c823a66d8832776213cec4.mp3str"
+
+[deps]
+
+source_file="res://recursos/musicas e fontes/Melissa8Bits.mp3"
+dest_files=["res://.godot/imported/Melissa8Bits.mp3-432e1c0aa9c823a66d8832776213cec4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

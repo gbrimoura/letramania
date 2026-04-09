@@ -48,8 +48,16 @@ var sixl_words = [
 ]
 
 func set_gaps(array_size: int) -> void:
-	var x = 120
-	var y_positions = [80, 180, 80, 180]  # Posições Y para cada linha
+	var viewport_size = get_viewport_rect().size
+	var viewport_w = viewport_size.x
+	var viewport_h = viewport_size.y
+	var side_margin = viewport_w * 0.06
+	var column_gap = viewport_w * 0.06
+	var available_w = viewport_w - (side_margin * 2.0) - column_gap
+	var column_w = available_w / 2.0
+	var top_y = viewport_h * 0.12
+	var row_gap = viewport_h * 0.16
+	var y_positions = [top_y, top_y + row_gap, top_y, top_y + row_gap]
 	var words
 
 	if array_size == 4:
@@ -72,26 +80,34 @@ func set_gaps(array_size: int) -> void:
 
 	# Criação dos elementos
 	for i in 4:
-		if i == 2:
-			match array_size:
-				4:
-					x += 700
-				5:
-					x += 620
-				_:
-					x += 560
-
 		var word_data = words[selected_indices[i]]
 		var word_str = word_data["word"]
-		var base_x = x
+		var row = i % 2
+		var col = i / 2
+		var col_x = side_margin + (col * (column_w + column_gap))
 		var base_y = y_positions[i]
+
+		var image_size = clamp(viewport_h * 0.10, 44.0, 82.0)
+		var letter_size = clamp(min((column_w * 0.72) / float(array_size), viewport_h * 0.085), 46.0, 78.0)
+		var letter_gap = clamp(letter_size * 0.14, 6.0, 14.0)
+		var image_gap = clamp(letter_size * 0.20, 8.0, 18.0)
+		var word_w = (letter_size * array_size) + (letter_gap * (array_size - 1))
+		var block_w = image_size + image_gap + word_w
+		var block_x = col_x + (column_w - block_w) / 2.0
+		var img_x = block_x
+		var base_x = img_x + image_size + image_gap
+
+		# Aplica um pequeno deslocamento vertical alternado para separar visualmente as linhas.
+		if row == 1:
+			base_y += letter_size * 0.15
 
 		# Criação das letras primeiro
 		for n in array_size:
 			var draggable = get_node("Arrastável").duplicate()
 			selected_words[i]["letters"].append([draggable, word_str[n]])
 			add_child(draggable)
-			draggable.position = Vector2(base_x + (n * 75), base_y)
+			draggable.size = Vector2(letter_size, letter_size)
+			draggable.position = Vector2(base_x + (n * (letter_size + letter_gap)), base_y)
 
 		# Agora adiciona a imagem da palavra
 		if word_data["image"] != "":
@@ -99,18 +115,8 @@ func set_gaps(array_size: int) -> void:
 			img.texture = load(word_data["image"])
 			img.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 			img.expand = true
-
-			# 📏 Tamanho proporcional à tela
-			var altura_tela = get_viewport_rect().size.y
-			var tamanho = clamp(altura_tela * 0.15, 48, 80)
-			img.custom_minimum_size = Vector2(tamanho, tamanho)
-
-			# 🧭 Alinhamento com a primeira letra
-			var margem_horizontal = 20  # distância entre imagem e letras
-			var img_x = base_x - tamanho - margem_horizontal
-			var img_y = base_y + 32 - tamanho / 2  # centralizar com altura ~64px da letra
-
-			img.position = Vector2(img_x, img_y)
+			img.custom_minimum_size = Vector2(image_size, image_size)
+			img.position = Vector2(img_x, base_y + (letter_size - image_size) / 2.0)
 			add_child(img)
 			word_images.append(img)
 

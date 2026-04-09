@@ -1,0 +1,146 @@
+[gd_scene load_steps=19 format=3 uid="uid://dfx8s0nsyk0bx"]
+
+[ext_resource type="Script" uid="uid://cgy4mskjc7kxy" path="res://scripts/menu/botoesMenu.gd" id="1_fjobq"]
+[ext_resource type="Texture2D" uid="uid://btq728fkwb3m" path="res://assets/menu/background_Padrão.png" id="2_1nf4j"]
+[ext_resource type="AudioStream" uid="uid://dkkhlhxm08ta2" path="res://recursos/jogo/button-click.mp3" id="3_jnwvw"]
+[ext_resource type="Texture2D" uid="uid://dc8wpb8pe6hj" path="res://recursos/parabenizacao/Botões/ContinuarBase.png" id="5_r2vwx"]
+[ext_resource type="Texture2D" uid="uid://xc3ivuhl62xi" path="res://recursos/parabenizacao/Botões/ContinuarPressed.png" id="6_hqpvv"]
+[ext_resource type="Texture2D" uid="uid://c5bdvet6g6rau" path="res://recursos/parabenizacao/Botões/ContinuarHighlight.png" id="7_5hukf"]
+[ext_resource type="Texture2D" uid="uid://dtusgt8y1h4fi" path="res://recursos/menu/Botões/VolumeLigado.png" id="8_m8cm4"]
+[ext_resource type="Texture2D" uid="uid://dyc66xpyc3fm0" path="res://recursos/menu/Botões/VolumeDesligado.png" id="9_cnat3"]
+[ext_resource type="Script" uid="uid://c16aya8f236vp" path="res://scripts/global/botao_musica.gd" id="10_qpewd"]
+[ext_resource type="Script" uid="uid://csky1bv8v7byq" path="res://scripts/menu/girando.gd" id="11_5en5h"]
+[ext_resource type="Texture2D" uid="uid://c81ntatbx84im" path="res://recursos/letras/f.png" id="12_1nf4j"]
+[ext_resource type="Texture2D" uid="uid://bu6vn3gfx3xv6" path="res://recursos/letras/i.png" id="13_jnwvw"]
+[ext_resource type="Texture2D" uid="uid://cxn7bo4qgwsn4" path="res://recursos/letras/m.png" id="14_nu7m4"]
+[ext_resource type="Texture2D" uid="uid://b56n6qyo6l51j" path="res://recursos/letras/d.png" id="15_r2vwx"]
+[ext_resource type="Texture2D" uid="uid://dxrnorqouoanp" path="res://recursos/letras/e.png" id="16_eki5g"]
+[ext_resource type="Texture2D" uid="uid://by5yfq650btj4" path="res://recursos/letras/j.png" id="17_hqpvv"]
+[ext_resource type="Texture2D" uid="uid://bvrcbvavjobie" path="res://recursos/letras/o.png" id="18_5hukf"]
+[ext_resource type="Texture2D" uid="uid://cnh4rfa0y7nep" path="res://recursos/letras/g.png" id="19_m8cm4"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fjobq")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1nf4j")
+expand_mode = 1
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jnwvw")
+volume_db = -10.0
+
+[node name="Iniciar" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = 102.0
+offset_right = 194.0
+offset_bottom = 222.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_r2vwx")
+texture_pressed = ExtResource("6_hqpvv")
+texture_hover = ExtResource("7_5hukf")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="MusgaOnOff" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -96.0
+offset_right = 94.0
+offset_bottom = -26.0
+grow_vertical = 0
+focus_mode = 0
+action_mode = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+texture_normal = ExtResource("8_m8cm4")
+texture_pressed = ExtResource("9_cnat3")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("10_qpewd")
+
+[node name="Titulo" type="Node2D" parent="."]
+position = Vector2(564, 134)
+script = ExtResource("11_5en5h")
+
+[node name="F" type="Sprite2D" parent="Titulo"]
+position = Vector2(-100, -50)
+rotation = -0.0610865
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_1nf4j")
+
+[node name="I" type="Sprite2D" parent="Titulo"]
+position = Vector2(0, -50)
+rotation = 0.0261799
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_jnwvw")
+
+[node name="M" type="Sprite2D" parent="Titulo"]
+position = Vector2(100, -50)
+rotation = -0.0349066
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_nu7m4")
+
+[node name="D2" type="Sprite2D" parent="Titulo"]
+position = Vector2(-50, 75)
+rotation = 0.0610865
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("15_r2vwx")
+
+[node name="E2" type="Sprite2D" parent="Titulo"]
+position = Vector2(50, 75)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("16_eki5g")
+
+[node name="J" type="Sprite2D" parent="Titulo"]
+position = Vector2(-150, 200)
+rotation = -0.0698132
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_hqpvv")
+
+[node name="O" type="Sprite2D" parent="Titulo"]
+position = Vector2(-50, 200)
+rotation = 0.0610865
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("18_5hukf")
+
+[node name="G" type="Sprite2D" parent="Titulo"]
+position = Vector2(50, 200)
+rotation = -0.0174533
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_m8cm4")
+
+[node name="O2" type="Sprite2D" parent="Titulo"]
+position = Vector2(150, 200)
+rotation = -0.0698132
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("18_5hukf")
+
+[connection signal="pressed" from="Iniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="MusgaOnOff" to="." method="_on_musga_on_off_pressed"]
+[connection signal="pressed" from="MusgaOnOff" to="MusgaOnOff" method="_on_pressed"]

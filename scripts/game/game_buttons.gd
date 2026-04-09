@@ -1,6 +1,11 @@
 extends Control
 
+const TAMANHO_BOTAO_MENU: Vector2 = Vector2(70, 70)
+const ALTURA_INFO_SUPERIOR: float = 56.0
+
 @onready var background = $Background
+@onready var botao_voltar = $Voltar
+@onready var botao_audio = $MusgaOnOff
 @export var bus_name: String = "Musica"
 var musica: int
 @onready var label_tempo = $Tempo
@@ -84,6 +89,15 @@ func _ready():
 	label_vidas.label_settings = label_configs
 	label_vidas.label_settings.font_size = 36
 
+	call_deferred("_reposicionar_botoes_centro")
+	call_deferred("_reposicionar_info_superior")
+
+
+func _notification(what):
+	if what == NOTIFICATION_RESIZED:
+		_reposicionar_botoes_centro()
+		_reposicionar_info_superior()
+
 func _process(delta):
 	if temporizador_ligado:
 		Jogo.tempo_decorrido += delta
@@ -130,6 +144,51 @@ func _on_musga_on_off_pressed() -> void:
 	var is_muted = AudioServer.is_bus_mute(musica)
 	AudioServer.set_bus_mute(musica, not is_muted)
 
+
+func _reposicionar_botoes_centro() -> void:
+	if not is_instance_valid(botao_voltar) or not is_instance_valid(botao_audio):
+		return
+
+	var area_tela: Vector2 = get_viewport_rect().size
+	var tamanho_botao: Vector2 = TAMANHO_BOTAO_MENU
+	var margem_horizontal: float = maxf(area_tela.x * 0.02, 24.0)
+	var margem_inferior: float = maxf(area_tela.y * 0.02, 24.0)
+	var posicao_y: float = area_tela.y - tamanho_botao.y - margem_inferior
+
+	botao_voltar.custom_minimum_size = tamanho_botao
+	botao_audio.custom_minimum_size = tamanho_botao
+	botao_voltar.size = tamanho_botao
+	botao_audio.size = tamanho_botao
+
+	botao_audio.position = Vector2(margem_horizontal, posicao_y)
+	botao_voltar.position = Vector2(area_tela.x - tamanho_botao.x - margem_horizontal, posicao_y)
+
+
+func _reposicionar_info_superior() -> void:
+	if not is_instance_valid(label_tempo) or not is_instance_valid(label_pontuacao) or not is_instance_valid(label_vidas):
+		return
+
+	var area_tela: Vector2 = get_viewport_rect().size
+	var margem_horizontal: float = maxf(area_tela.x * 0.02, 24.0)
+	var margem_superior: float = maxf(area_tela.y * 0.02, 16.0)
+	var largura_lateral: float = maxf(area_tela.x * 0.22, 170.0)
+	var largura_central: float = maxf(area_tela.x * 0.16, 130.0)
+
+	label_tempo.custom_minimum_size = Vector2(largura_lateral, ALTURA_INFO_SUPERIOR)
+	label_tempo.size = Vector2(largura_lateral, ALTURA_INFO_SUPERIOR)
+	label_tempo.position = Vector2(margem_horizontal, margem_superior)
+	label_tempo.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+
+	label_pontuacao.custom_minimum_size = Vector2(largura_central, ALTURA_INFO_SUPERIOR)
+	label_pontuacao.size = Vector2(largura_central, ALTURA_INFO_SUPERIOR)
+	label_pontuacao.position = Vector2((area_tela.x - largura_central) * 0.5, margem_superior)
+	label_pontuacao.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+
+	label_vidas.custom_minimum_size = Vector2(largura_lateral, ALTURA_INFO_SUPERIOR)
+	label_vidas.size = Vector2(largura_lateral, ALTURA_INFO_SUPERIOR)
+	label_vidas.position = Vector2(area_tela.x - largura_lateral - margem_horizontal, margem_superior)
+	label_vidas.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+
 # ----------------------------- Arrastável	
 
 func check_snap_area():
@@ -148,11 +207,10 @@ func _on_voltar_pressed() -> void:
 	elif Jogo.word_size == 5:
 		Jogo.set_inatividade_fase2()
 	elif Jogo.word_size == 6:
-		Jogo.set_inatividade_fase2()
+		Jogo.set_inatividade_fase3()
 	Jogo.completo = "INTERROMPIDO"
 	Jogo.salvar_dados_no_csv()
 	Jogo.word_size = 3
-	Jogo.tempo_decorrido = 0.0
 	# Pausa apenas a física e lógica do jogo, mantendo a UI ativa
 	get_tree().paused = true
 	# Mantém o diálogo processando input mesmo com o jogo pausado
@@ -161,6 +219,7 @@ func _on_voltar_pressed() -> void:
 
 func _on_confirmation_dialog_confirmed():
 	get_tree().paused = false
+	Jogo.tempo_decorrido = 0.0
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
 
 func _on_confirmation_dialog_canceled():
