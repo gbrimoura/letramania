@@ -56,7 +56,7 @@ Durante as partidas, o jogo registra métricas da sessão e exporta um CSV com o
 ## Instalação
 
 ### Arquivos binários (APK)
-- [Releases](https://github.com/gbrimoura/letramania/releases)
+- Em um dispositivo Android, baixe e execute a versão mais recente: [Releases](https://github.com/gbrimoura/letramania/releases)
 
 ### Construção a partir do código-fonte
 
