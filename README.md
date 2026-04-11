@@ -53,12 +53,19 @@ As preferências são salvas em `user://configuracao.cfg`.
 
 Durante as partidas, o jogo registra métricas da sessão e exporta um CSV com os resultados. No código atual, esse arquivo é salvo em `dados_partidas.csv` dentro da pasta de Download do dispositivo Android.
 
-## Requisitos
+## Instalação
+
+### Arquivos binários
+- [Releases](https://github.com/gbrimoura/letramania/releases)
+
+### Construção a partir do código-fonte
+
+#### Pré-requisitos
 
 - Godot 4.6 ou superior.
 - Projeto configurado para renderer mobile.
 
-## Como executar
+#### Como executar
 
 1. Abra o projeto no Godot.
 2. Aguarde a importação dos recursos.
